@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DDP tutorial</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+      
+    <div id="logo" class="fl_left ribbon animated fadeInDown">
+        <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li><a href="../index.html">Home</a></li>
+        <li class="active"><a class="drop" href="#">Introduction</a>
+          <ul>
+            <li><a href="gallery.html">Meteor js</a></li>
+            <li><a href="mongodb.html">MongoDB</a></li>
+            <li><a href="ddp.html">DDP with Meteor</a></li>
+            <li><a href="otherDbs.html">Other Databases</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="#">Tutorials</a>
+          <ul>
+            <li><a href="#">MongoDB</a></li>
+            <li><a href="#">DDP</a></li>
+            <li><a href="#">Server Side</a></li>
+            <li><a href="#">PostgreSQL</a></li>
+            <li><a href="#">Neo4j</a></li>
+            <li><a href="#">RethinkDB</a></li>
+            <li><a href="#">Oracle</a></li>
+            <li><a href="#">AlaSQL</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Installation</a></li>
+        <li><a href="#">Future</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Introduction</a></li>
+      <li><a href="#">DDP </a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1 style="color:red" class="animated fadeInDown"><b>Distributed Data Protocol Specifications</b></h1>
+      <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteororacle.jpg">
+      <p>DDP is a Stateful WebSocket Protocol. It handles two main operations<li>1) Remote Procedure Calls (RPC)</li><li>2) Manages Data</li></p>
+      <p>In this tutorial we are going to learn how to communicate between server and client using DDP protocol</p>
+      <h1 style="color:red" class="animated fadeInDown"><b>Client to Server Connection</b></h1>
+        <img src="../images/ddpConnection.png">
+        <p>Step-1: Client sends connect message</p>
+        <div id="comments">
+            <ul><li>
+              <div class="comcont">
+                <p>"connect" msg {"msg"."connect","version":"1","support":["1","pre2","pre1"]}</p> </div>
+            </li></ul>
+        </div>
+        <p>Step-2: Server sends connected/error message</p>
+        <div id="comments">
+            <ul><li>
+              <div class="comcont">
+                <p>“connected” msg:{"msg":"connected","session":"QWERERTERTERTERT"}</p> </div>
+            </li></ul>
+        </div>
+        
+        <h1 style="color:red" class="animated fadeInDown"><b>Remote Procedure Calls</b></h1>
+        <img src="../images/ddpRPC.png">
+        <p>   ⁃ method messages sent by client to the server</p>
+        <div id="comments">
+            <ul><li>
+              <div class="comcont">
+                <p>{ "msg":method","method":methodName","paras":[Params values],"id":"messageID"}</p> </div>
+            </li></ul>
+        </div>
+        <p>   ⁃ result message sent by server to the client</p>
+        <div id="comments">
+            <ul><li>
+              <div class="comcont">
+                <p>{"msg":"result","id":messageId","result":SomeResult}</p> </div>
+            </li></ul>
+        </div>
+        <p>   ⁃ update message sent by server to the client</p>
+        <div id="comments">
+            <ul><li>
+              <div class="comcont">
+                <p>{"msg":"updated","method".["messageId"]}</p> </div>
+            </li></ul>
+        </div>
+        <h1 style="color:red" class="animated fadeInDown"><b>Managing Data</b></h1>
+        <p> <li><b>sub</b> : Subscribe to a Collection</li>
+          <li><b>unsub</b> : Unsubscribe from a collection</li>
+          <li><b>nosub</b> : Subscription not allowed by the server</li>
+          <li><b>added</b> : Document added to local set</li>
+          <li><b>changed</b> : Document modified</li>
+          <li><b>removed</b> : Document was deleted</li>
+          <li><b>ready</b> : Initial Data from subscription sent</li>
+          <li><b>addedBefore</b> : Document added in ordered collection with the document ID after the document </li>
+          <li><b>moveBefore</b> : f a ordered collection has changed</li>
+        </p>
+        <p>For detailed information on messages click<a href="https://github.com/meteor/meteor/blob/master/packages/ddp/DDP.md"> Meteor: DDP Specification</a> </p>
+        <img src="../images/ddpMD1.png">
+
+        <p>For sample codes click<a href="https://www.npmjs.com/package/ddp"> npmjs ddp tutorials</a> </p>
+
+
+
+<!-- ################################################################################################ -->
+         
+        
+</body>
+</html>
