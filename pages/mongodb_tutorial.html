@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MONGO DB</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+	<header id="header" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+			
+		<div id="logo" class="fl_left ribbon animated fadeInDown">
+				<a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
+		</div>
+		<nav id="mainav" class="fl_right">
+			<ul class="clear">
+				<li><a href="../index.html">Home</a></li>
+				<li><a class="drop" href="#">Introduction</a>
+					<ul>
+						<li><a href="meteor.html">Meteor js</a></li>
+						<li><a href="mongodb.html">MongoDB</a></li>
+						<li><a href="ddp.html">DDP with Meteor</a></li>
+						<li><a href="otherDbs.html">Other Databases</a></li>
+					</ul>
+				</li>
+				<li class="active"><a class="drop" href="#">Tutorials</a>
+					<ul>
+						<li><a href="Meteor_Tutorials.html">Meteor</a></li>
+						<li class="active"><a href="mongodb_tutorial.html">MongoDB</a></li>
+						<li><a href="ddptutorial.html">DDP</a></li>
+						<li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li><a href="#">PostgreSQL</a></li>
+                <li><a href="#">Neo4j</a></li>
+                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="#">AlaSQL</a></li>
+              </ul>
+            </li>
+					</ul>
+				</li>
+				<li><a href="install.html">Installation</a></li>
+				<li><a href="Future.html">Future</a></li>
+				<!--<li><a href="faq.html">FAQ</a></li> -->
+				<li><a href="faq.html">FAQ</a></li>
+			</ul>
+		</nav>
+		<!-- ################################################################################################ -->
+	</header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+	<div id="breadcrumb" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Tutorials</a></li>
+			<li><a href="mongodb_tutorial.html">MongoDB</a></li>
+		</ul>
+		<!-- ################################################################################################ -->
+	</div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+	<main class="hoc container clear"> 
+		<!-- main body -->
+		<!-- ################################################################################################ -->
+		<div class="content"> 
+			<!-- ################################################################################################ -->
+			<h1 style="color:red" class="animated fadeInDown"><b>MongoDB using Meteor</b></h1>
+			<p>This Page goes through the basic Mongo Collection & CRUD operations performed using simple application in Meteor.</p>
+		</br>
+		<h1 style="color:red" class="animated fadeInDown"><b>Setting up the environment</b></h1>
+		<p>To begin, first create a sample meteor application.<br>
+				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Install <a href="install.html">Meteor</a><br>
+				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Create sample Application using <a href="Meteor_Tutorials.html">MeteorCreateSample</a><br>
+		</p>
+		<p>Once you have created the sample Application. You will see two folders Client and Server and each has main.js file which is the startup file for Server and Client. As meteor is a full-stack framework, the code that you write will run on both the server and the client.</p>
+		<p>Coming to the data storage and retrieval Meteor uses MongoDB as the default database. You can read more about Meteor MongoDB workflow in the <a href="mongodb.html">Meteor uses MongoDB</a>. Collections are Meteors way of storing data and creating a collection is as simple as calling</p>
+		<div id="comments">
+				<ul>
+					<li>
+						<article>
+							<div class="comcont">
+								<p><i><b>Tasks = new Mongo.Collection("tasks");</b></i></p>
+							</div>
+						</article>
+					</li>
+				</ul>
+		</div>
+		<p>In your Server and Client JavaScript file adding the above line sets up a MongoDB collection “tasks” on the server side and on the client side it creates a cache of the server collection</p><br>
+		<h1 style="color:red" class="animated fadeInDown"><b>Create tasks collection</b></h1><br>
+		Server main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/server_collection.png" alt =""><br>
+		Client main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/client_collection.png" alt =""><br>&nbsp;&nbsp;&nbsp;&nbsp;
+		<h1 style="color:red" class="animated fadeInDown"><b>Create Handlers</b></h1>
+		<p>To do any operations on the data through Meteor, First we have to create the templates and call them using handlers like below: <br>
+				Here i have created six templates for Inserting the data into the collection, retrieving,updating, removing and listing all the data from the MongoDB collection that we created i.e., tasks </p>
+		Client main.html																							
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/handlers1.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h1 style="color:red" class="animated fadeInDown"><b>Create Templates</b></h1>
+		<p>Here is how we can create Templates for each of the operation</p>
+		<p> In this step, we'll add an input field for users to add tasks to the list</p> 
+		Client main.html
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/add_task_temp.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h1 style="color:red" class="animated fadeInDown"><b>Create Event Listeners</b></h1>
+		<p>Here's the JavaScript code we need to add to listen to the submit event on the form</p>
+		Client main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/add_task_event.png" alt =""><br>
+		<p>Now your app has a new input field and a submit button to hit once data is entered in the field which is inserting a task into the tasks collection. Once we open the browser and see the new document will be updated in the collection which we see in the end of this tutorial</p>
+		<p>Here we see the events in the JavaScript file which are listeners. Event listeners are added to the templates when there is something to listen and operate accordingly. In our case the event listener listens to the submit button and then does the required(insert) operation</p>
+		<p>Inside the event handler we are inserting a task to the collection by calling the Tasks.insert() which is the function to insert the data.</p><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h1 style="color:red" class="animated fadeInDown"><b>Find data from the Collection</b></h1>
+		<p>Till now we are only inserting the data to the collection. Now, we will see how to retrieve the data.Below are the Templates and event listener for finding the data that we inserted</p>
+		Client main.html
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/find_task_temp.png" alt =""><br>
+		Client main.html
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/display_result_template.png" alt =""><br>
+		Client main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/findtask_event.png" alt =""><br>
+		<p>It is similar to the insert task, We create the template, gets the input, Find the data and display it to the user. Here insdie the event listener we are finding the task id given the task name and displaying both to the user. Tasks.findOne take single inout and gives the single task output</p><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h1 style="color:red" class="animated fadeInDown"><b>List all the data from the Collection</b></h1>
+		<p>However, if we want to take a look of all the data in the data base, we can do that by adding the helper, helpers are functions that you can use with handlers as if they were variables. Here in our example we have created a helper function 'all_tasks' which we used as a list and iterated to get single task at a time and displaying them one by one. Tasks.find() functon without any JSOn arguments displays all the documents from the collection.</p>
+		Client main.html
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/list_all_temp.png" alt =""><br>
+		Client main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/listallhelper.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h1 style="color:red" class="animated fadeInDown"><b>Update data</b></h1>
+		<p>Similarlly for Update we first create the template, take users input, Event listener listens and sets the given id's old task with the new task and display them. Tasks.update() function taes id and the new set value for the given id and updates</p>
+		Client main.html
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/update_task_template.png" alt =""><br>
+		Client main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/updatetaskevent.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+		<h1 style="color:red" class="animated fadeInDown"><b>Remove data from Collection</b></h1>
+		<p>For remove we create the template, take users input,Event listener listens and removes the given task from the collection. Tasks.remove() takes only the id and deletes the record from the collection</p>
+		Client main.html
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/remove_task_temp.png" alt =""><br>
+		Client main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/removetaskevent.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+		
+		<p>Here is the whole server and client code for the basic CRUD</p>
+		Server main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/servercode.png" alt =""><br>
+		Client main.html & main.js
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/clientcode.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h1 style="color:red" class="animated fadeInDown"><b>Test the code</b></h1>
+		<h5 style="color:green" class="animated fadeInDown">Insert</h5>
+		<p>When you open the app on the localhost:3000. You see the app running. First let's test the insert functionality</p>
+		<p>Here, I have given the task 'CS6320' and clicked on Submit. Open the console and give 'Tasks.find({}).fetch()' we are checking whether the data in Inserted or not and as we can see the new document with the given task is created with a random id which is generated by Mongo and is the primary key for the collection</p>
+		<p>Also,if you observe the display list is also updated with the new value</p>
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/insert.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+
+		<h5 style="color:green" class="animated fadeInDown">Find One</h5>
+		<p>Here, I've given the task 'CS6320' and clicked on Find this time. We see that the task along with the id details is displayed.</p>
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/find.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+		<h5 style="color:green" class="animated fadeInDown">Update</h5>
+		<p>Here, I've given the task id of the task 'CS6320' and gave the new value for task as 'Webbased' and clicked on Update. The new value is updated both in the display list and the collection that we see below in the console</p>
+		<img class="imgl borderedbox inspace-5"  src="../images/mongotutorialimages/update.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+		<h5 style="color:green" class="animated fadeInDown">Remove</h5>
+		<p>Here, I've given the task 'Webbased' & clicked on Remove. The task is deleted from both the display list and the collection that we see below in the console</p>
+		<img class="imgl borderedbox inspace-5" src="../images/mongotutorialimages/remove.png" alt =""><br>&nbsp; &nbsp; &nbsp;&nbsp;
+		<p>These are just the basic operations that we can perform on the database and there any many more functions that can be used. This is jut to give the basic knowledge of the using Mongo functions from Meteor. Explore more for more advanced details</p>
+		</br></br>
+		<h1 style="color:red" class="animated fadeInDown"><b>Demo</b></h1>
+		<p>Here is a simple tutorial on how to work with data using Forms</p>
+		<iframe width="970" height="450" 
+			src="https://www.youtube.com/embed/O_3xigLvV0E" frameborder="0" allowfullscreen>
+		</iframe>
+
+		<!-- / main body -->
+		<div class="clear"></div>
+	</main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+	<footer id="footer" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		
+		<!-- ################################################################################################ -->
+	</footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+	<div id="copyright" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		<p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
+		<!-- ################################################################################################ -->
+	</div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
