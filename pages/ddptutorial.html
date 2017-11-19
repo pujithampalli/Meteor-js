@@ -55,7 +55,7 @@
     <!-- ################################################################################################ -->
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Introduction</a></li>
+      <li><a href="#">Tutorials/a></li>
       <li><a href="#">DDP </a></li>
     </ul>
     <!-- ################################################################################################ -->
@@ -73,9 +73,12 @@
       <!-- ################################################################################################ -->
       <h1 style="color:red" class="animated fadeInDown"><b>Distributed Data Protocol Specifications</b></h1>
       <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteororacle.jpg">
-      <p>DDP is a Stateful WebSocket Protocol. It handles two main operations<li>1) Remote Procedure Calls (RPC)</li><li>2) Manages Data</li></p>
+      <p>DDP is a Stateful WebSocket Protocol. It handles two main operations</p>
+      <p>1) Remote Procedure Calls (RPC)</p>
+      <p>2) Manages Data</p>
       <p>In this tutorial we are going to learn how to communicate between server and client using DDP protocol</p>
       <h1 style="color:red" class="animated fadeInDown"><b>Client to Server Connection</b></h1>
+      <p> Client sends connect message to server with details (version etc.) to setup connection. Server replies with connected/failed message depending on if or not it can establish connection with given version.</p>
         <img src="../images/ddpConnection.png">
         <p>Step-1: Client sends connect message</p>
         <div id="comments">
@@ -88,27 +91,28 @@
         <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p>“connected” msg:{"msg":"connected","session":"QWERERTERTERTERT"}</p> </div>
+                <p>“connected” msg:{"msg":"connected","session":"SOMESESSIONID"}</p> </div>
             </li></ul>
         </div>
         
         <h1 style="color:red" class="animated fadeInDown"><b>Remote Procedure Calls</b></h1>
+        <p> RPC or remote proceduce calls are function calls that one program uses to request service or communicate with other program over network. With RPC we can invoke a method on server and get some result in return.</p>
         <img src="../images/ddpRPC.png">
-        <p>   ⁃ method messages sent by client to the server</p>
+        <p> <li>method messages sent by client to the server</li></p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
                 <p>{ "msg":method","method":methodName","paras":[Params values],"id":"messageID"}</p> </div>
             </li></ul>
         </div>
-        <p>   ⁃ result message sent by server to the client</p>
+        <p> <li>result message sent by server to the client</li></p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
                 <p>{"msg":"result","id":messageId","result":SomeResult}</p> </div>
             </li></ul>
         </div>
-        <p>   ⁃ update message sent by server to the client</p>
+        <p><li>update message sent by server to the client</li></p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -116,6 +120,7 @@
             </li></ul>
         </div>
         <h1 style="color:red" class="animated fadeInDown"><b>Managing Data</b></h1>
+        <p> Meteor provides various messages to manage data. Following is list of few most commonly used:</p>
         <p> <li><b>sub</b> : Subscribe to a Collection</li>
           <li><b>unsub</b> : Unsubscribe from a collection</li>
           <li><b>nosub</b> : Subscription not allowed by the server</li>
@@ -126,13 +131,16 @@
           <li><b>addedBefore</b> : Document added in ordered collection with the document ID after the document </li>
           <li><b>moveBefore</b> : f a ordered collection has changed</li>
         </p>
-        <p>For detailed information on messages click<a href="https://github.com/meteor/meteor/blob/master/packages/ddp/DDP.md"> Meteor: DDP Specification</a> </p>
         <img src="../images/ddpMD1.png">
-
-        <p>For sample codes click<a href="https://www.npmjs.com/package/ddp"> npmjs ddp tutorials</a> </p>
-
-
-
+        <p>For detailed information on messages click<a href="https://docs.meteor.com/api/connections.html"> Meteor: DDP Specification</a> </p>
+        <p> Example:</p>
+        <img src="../images/ddp_connect.png">
+        <p></p>
+        <h1 style="color:red" class="animated fadeInDown"><b>Working Demo for DDP </b></h1>
+        <p> This is simple project to show implementation of DDP. Every time user increments counter by clicking on insert and data is published and updated on server. </p>
+        <p>For complete demo source code click <a href="https://github.com/tanejasomi/DDP_Implementation_meteor"> github: DDP in Meteor_demo</a> </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FbgO2CJGfQ4" frameborder="0" gesture="media" allowfullscreen></iframe>  
+        
 <!-- ################################################################################################ -->
          
         
