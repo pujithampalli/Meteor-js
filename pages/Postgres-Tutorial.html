@@ -14,34 +14,39 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated fadeInDown">
+    <div id="logo" class="fl_left ribbon animated">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Introduction</a>
+        <li><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="gallery.html">Meteor js</a></li>
+            <li><a href="meteor.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
             <li><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Tutorials</a>
+        <li class="active"><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="#">MongoDB</a></li>
-            <li><a href="#">DDP</a></li>
-            <li><a href="#">Server Side</a></li>
-            <li><a href="#">PostgreSQL</a></li>
-            <li><a href="#">Neo4j</a></li>
-            <li><a href="#">RethinkDB</a></li>
-            <li><a href="#">Oracle</a></li>
-            <li><a href="#">AlaSQL</a></li>
+            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
+            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
+            <li><a href="ddptutorial.html">DDP</a></li>
+            <li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li class="active"><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
+                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
+                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#">Installation</a></li>
-        <li><a href="#">Future</a></li>
+        <li><a href="Install.html">Installation</a></li>
+        <li><a href="Future.html">Future</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -71,11 +76,11 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1 style="color:red" class="animated fadeInDown"><b>Meteor - Oracle Tutorial</b></h1>
-      <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteororacle.jpg">
+      <h1 style="color:red" ><b>Meteor - PostgresSQL Tutorial</b></h1>
+      <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteorpostgres.jpg">
       <p>PostgreSQL is the first possible implementation of SQL made for Meteor. When it acts as a serevr, its primary function is to store data securely and when requested return data accordingly. There is a package named 'meteor-pg' which allows you to use PostgreSQL with Meteor.   Here are few features provided by Postgres package for Meteor. <li>A method is provided to publish Postgres queries on to the server.</li><li>Methods are provided to perform data modifications like UPDATE, INSERT which can be done only on server-side.</li><li>You can publish any SQL query from the server to the client using Meteor.publish</li></p>
       <p>In this tutorial we are going to learn how Postgres can be installed, configured and used for Meteor. Following are the process steps of how it can be done.</p>
-      <h1 style="color:red" class="animated fadeInDown"><b>Installation Steps</b></h1>
+      <h1 style="color:red" ><b>Installation Steps</b></h1>
         <p>Step-1: Install 'meteor-pg' package for Postgres. </p>
         <div id="comments">
             <ul><li>
@@ -99,13 +104,13 @@
                 <p>import 'meteor-pg';</p>                           </div>
             </li></ul>
         </div>
-        <h1 style="color:red" class="animated fadeInDown"><b>Example Queries</b></h1>
+        <h1 style="color:red" ><b>Example Queries</b></h1>
         <p>Following are the example code snippets of how queries can be written.</p>
-        <p>Example-1:</p>
+        <p><b>Example-1:</b></p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p><xmp>// Server side
+                <p style="color:#0000FF";><xmp>// Server side
 
 import mpg from 'meteor-pg';
 
@@ -141,11 +146,11 @@ Template.leaderboard.helpers({
 });</xmp></p>                        </div>
             </li></ul>
         </div>
-        <p>Example-2:</p>
+        <p><b>Example-2:</b></p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p><xmp>// Server side
+                <p style="color:#0000FF";><xmp>// Server side
 
 import mpg from 'meteor-pg';
 
@@ -178,6 +183,26 @@ Template.leaderboard.events({
 });</xmp></p>                        </div>
             </li></ul>
         </div>
+
+            <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
         
 </body>
 </html>
