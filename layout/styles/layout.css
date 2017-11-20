@@ -253,7 +253,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#A1C6D9;}
 
 /* Rows */
 .row1-index-page{color:#FFFFFF; background-color:#FFFFFF; border-color:#A1C6D9;}
-.row3-index-page{color:#FFFFFF;opacity: 0.5;}
+.row3-index-page{color:#FFFFFF;opacity: 0.9;}
 .row1{color:#1D1E1F; background-color:#FFFFFF; border-color:#A1C6D9;}
 .row2, .row2 a{}
 .row3{color:#1D1E1F; background-color:#FFFFFF;}
@@ -427,6 +427,23 @@ table a, #comments a{background-color:inherit;}
 	#copyright p:first-of-type{margin-bottom:10px;}
 }
 
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
 
 @media screen and (max-width:750px){
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
