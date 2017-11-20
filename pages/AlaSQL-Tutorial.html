@@ -14,39 +14,34 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated">
+    <div id="logo" class="fl_left ribbon animated fadeInDown">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li><a class="drop" href="#">Introduction</a>
+        <li class="active"><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="meteor.html">Meteor js</a></li>
+            <li><a href="gallery.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
             <li><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li class="active"><a class="drop" href="#">Tutorials</a>
+        <li><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
-            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
-            <li><a href="ddptutorial.html">DDP</a></li>
-            <li><a class="drop" href="#">Other Databases</a>
-              <ul>
-                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
-                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
-                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
-                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
-                <li class="active"><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
-              </ul>
-            </li>
+            <li><a href="#">MongoDB</a></li>
+            <li><a href="#">DDP</a></li>
+            <li><a href="#">Server Side</a></li>
+            <li><a href="#">PostgreSQL</a></li>
+            <li><a href="#">Neo4j</a></li>
+            <li><a href="#">RethinkDB</a></li>
+            <li><a href="#">Oracle</a></li>
+            <li><a href="#">AlaSQL</a></li>
           </ul>
         </li>
-        <li><a href="Install.html">Installation</a></li>
-        <li><a href="Future.html">Future</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">Installation</a></li>
+        <li><a href="#">Future</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -76,11 +71,11 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1 style="color:red" ><b>Meteor - AlaSQL Tutorial</b></h1>
+      <h1 style="color:red" class="animated fadeInDown"><b>Meteor - Oracle Tutorial</b></h1>
       <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteororacle.jpg">
       <p>AlaSQL is an open source database for relational and schemaless data which has strong SQL like environment. Its main focus is on query speen and data source flexibility. It provides with the same SQL statements which we commonly use in the backend, like SELECT, INSERT, UPDATE, CREATE, JOINS etc. It has many other features like, <li>Fast data processing for applications running on clients.</li><li>Data can be imported, exported or manipulated in several formats.</li><li>It supports all browsers and mobile applications.</li></p>
       <p>In this tutorial we are going to learn how Meteor applications can use AlaSQL database. Following are the process steps of how it can be done.</p>
-      <h1 style="color:red" ><b>Installation Steps</b></h1>
+      <h1 style="color:red" class="animated fadeInDown"><b>Installation Steps</b></h1>
         <p>AlaSQL can be installed in following ways.</p>
         <p>1. Install AlaSQL with npm.</p>
         <div id="comments">
@@ -114,7 +109,7 @@
                 </div>
             </li></ul>
         </div>
-        <h1 style="color:red" ><b>Example Queries</b></h1>
+        <h1 style="color:red" class="animated fadeInDown"><b>Example Queries</b></h1>
         <p>You can access AlaSQL database in your code by adding the following line your in HTML file.</p>
         <div id="comments">
             <ul><li>
@@ -144,25 +139,6 @@
                 <p>console.log( alasql("SELECT * FROM meteor WHERE dependencies > 1") );</p>                        </div>
             </li></ul>
         </div>
-          <div class="clear"></div>
-  </main>
-</div>
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
-<script src="../layout/scripts/jquery.min.js"></script>
-<script src="../layout/scripts/jquery.backtotop.js"></script>
-<script src="../layout/scripts/jquery.mobilemenu.js"></script>
         
 </body>
 </html>

@@ -14,39 +14,34 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated">
+    <div id="logo" class="fl_left ribbon animated fadeInDown">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li><a class="drop" href="#">Introduction</a>
+        <li class="active"><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="meteor.html">Meteor js</a></li>
+            <li><a href="gallery.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
             <li><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li class="active"><a class="drop" href="#">Tutorials</a>
+        <li><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
-            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
-            <li><a href="ddptutorial.html">DDP</a></li>
-            <li><a class="drop" href="#">Other Databases</a>
-              <ul>
-                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
-                <li class="active"><a href="Neo4j-Tutorial.html">Neo4j</a></li>
-                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
-                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
-                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
-              </ul>
-            </li>
+            <li><a href="#">MongoDB</a></li>
+            <li><a href="#">DDP</a></li>
+            <li><a href="#">Server Side</a></li>
+            <li><a href="#">PostgreSQL</a></li>
+            <li><a href="#">Neo4j</a></li>
+            <li><a href="#">RethinkDB</a></li>
+            <li><a href="#">Oracle</a></li>
+            <li><a href="#">AlaSQL</a></li>
           </ul>
         </li>
-        <li><a href="Install.html">Installation</a></li>
-        <li><a href="Future.html">Future</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">Installation</a></li>
+        <li><a href="#">Future</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -76,12 +71,12 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1 style="color:red" ><b>Meteor - Neo4j Tutorial</b></h1>
+      <h1 style="color:red" class="animated fadeInDown"><b>Meteor - Oracle Tutorial</b></h1>
       <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteororacle.jpg">
       <p>Neo4j can be easily integrated within few steps with Meteor. When an application is developed in Meteor with Neo4j as backend, a reactive and similar relationship layer is created, which helps the application to run smoothly. </p>
       <p>In this tutorial we are going to learn how Meteor applications can be built and deployed by accessing its data stored in Neo4j database. Following are the process steps of how it can be done in command prompt.</p>
-      <h1 style="color:red" ><b>Installation Steps</b></h1>
-        <p><b>Step-1:</b> Install Neo4j database in your local system.(First install 'brew' if you dont have!) </p>
+      <h1 style="color:red" class="animated fadeInDown"><b>Installation Steps</b></h1>
+        <p>Step-1: Install Neo4j database in your local system.(First install 'brew' if you dont have!) </p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -89,7 +84,7 @@
                 </div>
             </li></ul>
         </div>
-        <p><b>Step-2:</b> Configure Neo4j in the system and set the password.</p>
+        <p>Step-2: Configure Neo4j in the system and set the password.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -106,15 +101,15 @@
             </li></ul>
         </div>
         <p>Login with default username and password 'neo4j' and then set the password. Neo4j starts running in your system.</p>
-        <h1 style="color:red" ><b>Working with Application</b></h1>
-        <p><b>Step-3:</b> Create Meteor application with the following command.</p>
+        <h1 style="color:red" class="animated fadeInDown"><b>Working with Application</b></h1>
+        <p>Step-3: Create Meteor application with the following command.</p>
       <div id="comments">
             <ul><li>
               <div class="comcont">
                 <p>$ meteor create AppName</p>                           </div>
             </li></ul>
         </div>
-        <p><b>Step-4:</b> You can add different packages based on your requirement. Following are example packages.</p>
+        <p>Step-4: You can add different packages based on your requirement. Following are example packages.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -123,7 +118,7 @@
                 </div>
             </li></ul>
         </div>
-        <p><b>Step-5:</b> Now configure the application so that it uses Neo4j by creating 'lib' directory with 'neo4j.js' file in it inside your application. Add the following code in your 'neo4j.js' file to complete the configuration.</p>
+        <p>Step-5: Now configure the application so that it uses Neo4j by creating 'lib' directory with 'neo4j.js' file in it inside your application. Add the following code in your 'neo4j.js' file to complete the configuration.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -131,7 +126,7 @@
                 </div>
             </li></ul>
         </div>
-        <p><b>Step-6:</b> Now your Meteor application is running with Neo4j database. When you are done using the application make sure that you stop Neo4j database, else it will run in the background continuosly. You can stop it by using the following command.</p>
+        <p>Step-6: Now your Meteor application is running with Neo4j database. When you are done using the application make sure that you stop Neo4j database, else it will run in the background continuosly. You can stop it by using the following command.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -139,26 +134,6 @@
                 </div>
             </li></ul>
         </div>
-
-            <div class="clear"></div>
-  </main>
-</div>
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
-<script src="../layout/scripts/jquery.min.js"></script>
-<script src="../layout/scripts/jquery.backtotop.js"></script>
-<script src="../layout/scripts/jquery.mobilemenu.js"></script>
         
 </body>
 </html>
