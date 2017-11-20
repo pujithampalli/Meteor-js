@@ -14,34 +14,39 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated fadeInDown">
+    <div id="logo" class="fl_left ribbon animated">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Introduction</a>
+       <li><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="gallery.html">Meteor js</a></li>
+            <li><a href="meteor.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
             <li><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Tutorials</a>
+        <li class="active"><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="#">MongoDB</a></li>
-            <li><a href="#">DDP</a></li>
-            <li><a href="#">Server Side</a></li>
-            <li><a href="#">PostgreSQL</a></li>
-            <li><a href="#">Neo4j</a></li>
-            <li><a href="#">RethinkDB</a></li>
-            <li><a href="#">Oracle</a></li>
-            <li><a href="#">AlaSQL</a></li>
+            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
+            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
+            <li><a href="ddptutorial.html">DDP</a></li>
+            <li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
+                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
+                <li class="active"><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#">Installation</a></li>
-        <li><a href="#">Future</a></li>
+        <li><a href="Install.html">Installation</a></li>
+        <li><a href="Future.html">Future</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -55,7 +60,7 @@
     <!-- ################################################################################################ -->
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Introduction</a></li>
+      <li><a href="#">Tutorials</a></li>
       <li><a href="#">Other Db's</a></li>
     </ul>
     <!-- ################################################################################################ -->
@@ -71,14 +76,14 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1 style="color:red" class="animated fadeInDown"><b>Meteor - RethinkDB Tutorial</b></h1>
+      <h1 style="color:red" ><b>Meteor - RethinkDB Tutorial</b></h1>
       <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/Rethinkmeteor.jpg">
       <p>RethinkDB is a document oriented distributed scalable database which pushes JSON data to the real-time applications. Meteor follows two different types of implementations namely change monitoring + poll-and-diff and oplog tailing, which targets for reactive applications and websites. RethinkDB provides scalable database that makes building realtime applications easy, which Meteor is exactly looking for. One of the special features of RethinkDB is changefeed which is almost similar to Meteor's oplog tailing. For collections in the Meteor-MongoDB architecture sharding is done on database level, it works in the same way for RethinkDB. The only difference between them is that, RethinkDB does not depend on external technical artifacts like oplog, where Meteor does.
           <p>Here are some features, which could be implemented when the application is built with Meteor and RethinkDB.</p><li>On the server, raw access is given to RethinkDB without any ORM's.</li><li>All the client-side data can be accessed using RethinkDB query language.</li><li>Meteor's publications/subscriptions model can be used for developing efficient applications.</li><li>Advantages of Meteor can be taken completely. For example, updating client-side without waiting for the response from server.</li></p>
       <p>In this tutorial we are going to learn how Meteor applications can be built and deployed by accessing its data stored in Oracle database. Following are the process steps of how it can be done.</p>
-      <h1 style="color:red" class="animated fadeInDown"><b>Installation Steps</b></h1>
-        <p>Step-1: Install Oracle database in your local system or get access to external database. You can<a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">download oracle</a>here.</p>
-        <p>Step-2: Install Oracle instant client from<a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">here</a>. After installing the instant client, run SQL*PLUS by the following commands to find the version of the database.</p>
+      <h1 style="color:red" ><b>Installation Steps</b></h1>
+        <p><b>Step-1:</b> Install Oracle database in your local system or get access to external database. You can<a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">download oracle</a>here.</p>
+        <p><b>Step-2:</b> Install Oracle instant client from<a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">here</a>. After installing the instant client, run SQL*PLUS by the following commands to find the version of the database.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -87,14 +92,14 @@ Oracle Database 11g Express Edition Release 12.2.0 - 64bit Production<br/>SQL> <
                 </div>
             </li></ul>
         </div>
-        <p>Step-3: In the Oracle database, create account for Meteor. It can be done by the following commands.</p>
+        <p><b>Step-3:</b> In the Oracle database, create account for Meteor. It can be done by the following commands.</p>
       <div id="comments">
             <ul><li>
               <div class="comcont">
                 <p>$ sqlplus sys as sysdba<br/>create user meteor identified by meteor;<br/>grant connect, resource to meteor;</p>                           </div>
             </li></ul>
         </div>
-        <p>Step-4: Check if the Meteor account has been created in the Oracle database. It can be done by the following commands.</p>
+        <p><b>Step-4:</b> Check if the Meteor account has been created in the Oracle database. It can be done by the following commands.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -103,7 +108,7 @@ Oracle Database 11g Express Edition Release 12.2.0 - 64bit Production<br/>SQL> <
                 </div>
             </li></ul>
         </div>
-        <p>Step-5: Export Meteor-Oracle package to your Meteor project by using the following commands.</p>
+        <p><b>Step-5:</b> Export Meteor-Oracle package to your Meteor project by using the following commands.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
@@ -112,7 +117,7 @@ Oracle Database 11g Express Edition Release 12.2.0 - 64bit Production<br/>SQL> <
 <br/>$ meteor</p>                        </div>
             </li></ul>
         </div>
-        <h1 style="color:red" class="animated fadeInDown"><b>Example Queries</b></h1>
+        <h1 style="color:red" ><b>Example Queries</b></h1>
         <p>1. SQL statement to create table.</p>
         <div id="comments">
             <ul><li>
@@ -141,5 +146,25 @@ Oracle Database 11g Express Edition Release 12.2.0 - 64bit Production<br/>SQL> <
                 <p>SELECT * FROM (SELECT * FROM "todos") WHERE "priority" = 1</p>                        </div>
             </li></ul>
         </div>
+
+          <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>

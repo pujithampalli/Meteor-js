@@ -13,35 +13,39 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated fadeInDown">
+    <div id="logo" class="fl_left ribbon animated">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Introduction</a>
+        <li><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="/Users/florahelan/Desktop/Meteor_project2/pages/Meteor.html">Meteor js</a></li>
+            <li><a href="meteor.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
             <li><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Tutorials</a>
+        <li class="active"><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="/Users/florahelan/Desktop/Meteor_project2/pages/Meteor_tutorials.html">Meteor</a></li>
-            <li><a href="#">MongoDB</a></li>
-            <li><a href="#">DDP</a></li>
-            <li><a href="#">Server Side</a></li>
-            <li><a href="#">PostgreSQL</a></li>
-            <li><a href="#">Neo4j</a></li>
-            <li><a href="#">RethinkDB</a></li>
-            <li><a href="#">Oracle</a></li>
-            <li><a href="#">AlaSQL</a></li>
+            <li class="active"><a href="Meteor_Tutorials.html">Meteor</a></li>
+            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
+            <li><a href="ddptutorial.html">DDP</a></li>
+            <li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
+                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
+                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#">Installation</a></li>
-        <li><a href="#">Future</a></li>
+        <li><a href="Install.html">Installation</a></li>
+        <li><a href="Future.html">Future</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -71,7 +75,7 @@
     <div class="content"> 
       <!-- ################################################################################################ -->
       
-       <h1 style="color:red" class="animated fadeInDown"><b>Meteor </b></h1>
+       <h1 style="color:red" ><b>Meteor </b></h1>
        <img class="imgr borderedbox inspace-5 animated fadeInRight" src="/Users/florahelan/Desktop/Meteor_project2/images/meteor_pics/Meteor1.png">
 
 
@@ -80,7 +84,7 @@
 
       <h3 style="color:red"><b> Setting up the environment</b></h3>
 
-       <p>To begin Meteor application, Install Meteor by following the instruction given here <a href="home/installation"> <b>Install </b></a> </p>
+       <p>To begin Meteor application, Install Meteor by following the instruction given here <a href="home/installation"> <font color="#0000FF">Install </font></a> </p>
 
        <h3 style="color:red"><b>1. Create a Meteor Application</b></h3>
 
@@ -244,12 +248,13 @@ if (Meteor.isServer) {
         => Started MongoDB.</br>
         => Started your app.</br>
 
-        => App running at: <a href="http://localhost:3000/"> http://localhost:3000/</a> </br>
+        => App running at: <a href="http://localhost:3000/"> <font color="#0000FF">http://localhost:3000/</font></a> </br>
 
         </p>
-        <p> open any web browser to view the application running on <a href="http://localhost:3000/"> http://localhost:3000/</a> </p></br>
+        <p> open any web browser to view the application running on <a href="http://localhost:3000/"> <font color="#0000FF">http://localhost:3000/</font> </a> </p></br>
+</br>
 
-        <img  width="500" height="500" src="/Users/florahelan/Desktop/Meteor_project2/images/meteor_pics/Meteor_local.png" >
+        <img  src="..\images\demo\Meteor_local.png" height="42" width="42">
 </div>
 </li></ul>
 </div>
@@ -269,11 +274,29 @@ if (Meteor.isServer) {
     <div id="comments">
 <ul><li>
 <div class="comcont">
-<video width="700" height="700" controls>
-  <source src="/Users/florahelan/Desktop/Meteor_project2/images/meteor_pics/An Introduction to Meteor.mp4" type="video/mp4">
-</video>
+<iframe width="970" height="450" src="https://www.youtube.com/embed/dOCMpoeuwTI" frameborder="0" allowfullscreen></iframe>
 </div>
 </li></ul>
 </div>
+
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>

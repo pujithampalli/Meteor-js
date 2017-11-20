@@ -12,31 +12,39 @@
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <div id="logo" class="fl_left">
-      <h1><a href="../index.html">DDP in Meteor</a></h1>
+    <div id="logo" class="fl_left ribbon animated">
+        <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
         <li class="active"><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="gallery.html">Meteor</a></li>
-            <li class="active"><a href="full-width.html">DDP</a></li>
-            <li><a href="sidebar-left.html">MongoDB</a></li>
-            <li><a href="sidebar-right.html">Other Databases</a></li>
+            <li><a href="meteor.html">Meteor js</a></li>
+            <li><a href="mongodb.html">MongoDB</a></li>
+            <li class="active"><a href="ddp.html">DDP with Meteor</a></li>
+            <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li><a href="#">INSTALL</a></li>
-        <li class="active"><a class="drop" href="#">TUTORIALS</a>
+        <li><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="gallery.html">Meteor</a></li>
-            <li class="active"><a href="full-width.html">DDP</a></li>
-            <li><a href="sidebar-left.html">MongoDB</a></li>
-            <li><a href="sidebar-right.html">Other Databases</a></li>
+            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
+            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
+            <li><a href="ddptutorial.html">DDP</a></li>
+            <li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
+                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
+                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#">References</a></li>
-        <li><a href="#">Future & Conclusion</a></li>
+        <li><a href="Install.html">Installation</a></li>
+        <li><a href="Future.html">Future</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -65,18 +73,18 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1>DDP- Distributed Data Protocol</h1>
+      <h1 style="color:red"><b>DDP- Distributed Data Protocol</b></h1>
       <img class="imgr borderedbox inspace-5" src="../images/demo/ddp1.gif" alt="">
 
       <p> <b>Distributed Data Protocol</b> is client server protocol based on WebSockets for queuing and updating a server side database and for synchronizing such updates among clients.It was created by “Meteor Development Group”and introduced in Meteor 0.2.0 for first time. </p>
 
-  <h2> Why DDP? </h2>
+  <h2 style="color:red" ><b> Why DDP? </b></h2>
   <p> It is standard way to solve latency issue associated with updates of database in JavaScript implementation : Queuing a server-side database -> Sending the result to client side -> pushing modification to client side. Instead of having a server process everything, render content and then send send HTML across the wire, just data is sent across wire and client decides what to do with it </p>
   <p> DDP is independent of kind of system: server, mobile app, web-service or client app (with exception of the browser) sends or receives data. All uses same protocol to communicate therefore all traffic looks same and treated in similar manner.</p>
 
   <img src="../images/ddp1.png">
 
-  <h2>Implementation</h2>
+  <h2 style="color:red" ><b> Implementation </b></h2>
    <p> DDP can work with any database, framework, or programming language. It has JSON based syntax and sends messages similar to REST Protocol. </p>
         <b>•  Client Subscribe </b> – ( Meteor.subscribe) </br>
         <p> Client subscribe to set of data, which will be mirrored on client's local datastore (MiniMongo)</p>
@@ -103,24 +111,10 @@
   </main>
 </div>
 <!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row4">
-  <footer id="footer" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-
-    
-    <!-- ################################################################################################ -->
-  </footer>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p> </p>
-    <p> </p>
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
     <!-- ################################################################################################ -->
   </div>
 </div>
