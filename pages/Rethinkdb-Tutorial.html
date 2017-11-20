@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Other DBs</title>
+<title>RethinkDB</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -59,9 +59,9 @@
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li><a href="#">Tutorials</a></li>
-      <li><a href="#">Other Db's</a></li>
+      <li><a href="#">Rethinkdb-Tutorial</a></li>
     </ul>
     <!-- ################################################################################################ -->
   </div>
@@ -81,73 +81,47 @@
       <p>RethinkDB is a document oriented distributed scalable database which pushes JSON data to the real-time applications. Meteor follows two different types of implementations namely change monitoring + poll-and-diff and oplog tailing, which targets for reactive applications and websites. RethinkDB provides scalable database that makes building realtime applications easy, which Meteor is exactly looking for. One of the special features of RethinkDB is changefeed which is almost similar to Meteor's oplog tailing. For collections in the Meteor-MongoDB architecture sharding is done on database level, it works in the same way for RethinkDB. The only difference between them is that, RethinkDB does not depend on external technical artifacts like oplog, where Meteor does.
           <p>Here are some features, which could be implemented when the application is built with Meteor and RethinkDB.</p><li>On the server, raw access is given to RethinkDB without any ORM's.</li><li>All the client-side data can be accessed using RethinkDB query language.</li><li>Meteor's publications/subscriptions model can be used for developing efficient applications.</li><li>Advantages of Meteor can be taken completely. For example, updating client-side without waiting for the response from server.</li></p>
       <p>In this tutorial we are going to learn how Meteor applications can be built and deployed by accessing its data stored in Oracle database. Following are the process steps of how it can be done.</p>
-      <h1 style="color:red" ><b>Installation Steps</b></h1>
-        <p><b>Step-1:</b> Install Oracle database in your local system or get access to external database. You can<a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">download oracle</a>here.</p>
-        <p><b>Step-2:</b> Install Oracle instant client from<a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">here</a>. After installing the instant client, run SQL*PLUS by the following commands to find the version of the database.</p>
-        <div id="comments">
-            <ul><li>
-              <div class="comcont">
-                <p>$ sqlplus<br/><br/>SQL*Plus: Release 12.2.0 Production on Thu Nov 14 15:27:34 2017<br/><br/>Copyright (c) 1982, 2011, Oracle.  All rights reserved.<br/><br/>Enter user-name: Meteor<br/>Enter password: <br/><br/>Connected to:
-Oracle Database 11g Express Edition Release 12.2.0 - 64bit Production<br/>SQL> </p>                           
-                </div>
-            </li></ul>
-        </div>
-        <p><b>Step-3:</b> In the Oracle database, create account for Meteor. It can be done by the following commands.</p>
+      <h1 style="color:red"><b>Installation Steps</b></h1>
+    <figcaption><font size="2" color="green"><a href="https://github.com/Slava/meteor-rethinkdb">(source)</font></a></figcaption>
+        <p>(For Windows) Setup RethinkDB package by running the following commands in your Application directory.</p>
       <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p>$ sqlplus sys as sysdba<br/>create user meteor identified by meteor;<br/>grant connect, resource to meteor;</p>                           </div>
-            </li></ul>
-        </div>
-        <p><b>Step-4:</b> Check if the Meteor account has been created in the Oracle database. It can be done by the following commands.</p>
-        <div id="comments">
-            <ul><li>
-              <div class="comcont">
-                <p>$ sqlplus Meteor/Meteor<br/><br/>SQL*Plus: Release 12.2.0 Production on Thu Nov 14 17:46:26 2017<br/><br/>Copyright (c) 1982, 2011, Oracle.  All rights reserved.<br/><br/>Connected to:Oracle Database 11g Express Edition Release 12.2.0 - 64bit Production
-<br/>SQL>exit</p>                        
+                <p>meteor add simple:rethink<br/><br/>env RETHINK_URL=rethinkdb://user:password@hostname:port/database meteor run</p>    
                 </div>
             </li></ul>
         </div>
-        <p><b>Step-5:</b> Export Meteor-Oracle package to your Meteor project by using the following commands.</p>
+      <p>Run RethinkDB instance in your local system, it will automatically connects you to sample 'test' database.</p>
+      <p>(For MAC OS) Install and run RethinkDB on MAC by following commands.</p>
+      <div id="comments">
+            <ul><li>
+              <div class="comcont">
+                <p>$ brew update<br/><br/>$ brew install rethinkdb<br/><br/>$ rethinkdb</p>    
+                </div>
+            </li></ul>
+        </div>
+        <h1 style="color:red"><b>Example Queries</b></h1>
+        <p>1. Create table.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p>$ cd PATH-TO-YOUR-METEOR-PROJECT<br/>$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<PATH-TO-YOUR-ORACLE-INSTANT-CLIENT>/instantclient_11_2/
-<br/>$ meteor add metstrike:meteor-oracle
-<br/>$ meteor</p>                        </div>
+                <p>Meteor = new Rethink.Table('Meteor');</p>                        </div>
             </li></ul>
         </div>
-        <h1 style="color:red" ><b>Example Queries</b></h1>
-        <p>1. SQL statement to create table.</p>
+        <p>2. Select documents based on conditions.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p>create table "todos" ("_id" varchar2(17) not null)</p>                        </div>
+                <p>console.log('All players:', Meteor.fetch()); #Fetching required documents.<br/><br/>console.log('Number of apps:', Meteor.count().run()); #Count function.<br/><br/>console.log('Updating apps:', Players.filter({name: 'TODOs'}).update({Platform: 'Meteor'}).run()); #Update function.</p>                        </div>
             </li></ul>
         </div>
-        <p>2. SQL statement to alter the table.</p>
+        <p>3. Complex queries by initializing variable.</p>
         <div id="comments">
             <ul><li>
               <div class="comcont">
-                <p>alter table "todos" add constraint "todos_PK" primary key ("_id")</p>                        </div>
+                <p>var r = Rethink.r;<br/><br/>Meteor.orderBy(r.desc('name')).limit(4).fetch();</p>                        </div>
             </li></ul>
         </div>
-        <p>3. SQL statement to insert tuples into the table.</p>
-        <div id="comments">
-            <ul><li>
-              <div class="comcont">
-                <p>INSERT:  todos { name: 'Get milk', priority: 1, userId: 'Jane', _id: '46662dSw2KkzpNXqo' } { safe: true }</p>                        </div>
-            </li></ul>
-        </div>
-        <p>4. SQL statement to select elements based on condition.</p>
-        <div id="comments">
-            <ul><li>
-              <div class="comcont">
-                <p>SELECT * FROM (SELECT * FROM "todos") WHERE "priority" = 1</p>                        </div>
-            </li></ul>
-        </div>
-
-          <div class="clear"></div>
   </main>
 </div>
 <!-- ################################################################################################ -->
