@@ -14,34 +14,39 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated fadeInDown">
+    <div id="logo" class="fl_left ribbon animated">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="../index.html">Home</a></li>
-        <li class="active"><a class="drop" href="#">Introduction</a>
+       <li><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="gallery.html">Meteor js</a></li>
+            <li><a href="meteor.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
             <li><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Tutorials</a>
+        <li class="active"><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="#">MongoDB</a></li>
-            <li><a href="#">DDP</a></li>
-            <li><a href="#">Server Side</a></li>
-            <li><a href="#">PostgreSQL</a></li>
-            <li><a href="#">Neo4j</a></li>
-            <li><a href="#">RethinkDB</a></li>
-            <li><a href="#">Oracle</a></li>
-            <li><a href="#">AlaSQL</a></li>
+            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
+            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
+            <li class="active"><a href="ddptutorial.html">DDP</a></li>
+            <li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
+                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
+                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#">Installation</a></li>
-        <li><a href="#">Future</a></li>
+        <li><a href="Install.html">Installation</a></li>
+        <li><a href="Future.html">Future</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -55,7 +60,7 @@
     <!-- ################################################################################################ -->
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Tutorials/a></li>
+      <li><a href="#">Tutorials</a></li>
       <li><a href="#">DDP </a></li>
     </ul>
     <!-- ################################################################################################ -->
@@ -71,13 +76,13 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1 style="color:red" class="animated fadeInDown"><b>Distributed Data Protocol Specifications</b></h1>
+      <h1 style="color:red" ><b>Distributed Data Protocol Specifications</b></h1>
       <img class="imgr borderedbox inspace-5 animated fadeInRight" src="../images/demo/meteororacle.jpg">
       <p>DDP is a Stateful WebSocket Protocol. It handles two main operations</p>
       <p>1) Remote Procedure Calls (RPC)</p>
       <p>2) Manages Data</p>
       <p>In this tutorial we are going to learn how to communicate between server and client using DDP protocol</p>
-      <h1 style="color:red" class="animated fadeInDown"><b>Client to Server Connection</b></h1>
+      <h1 style="color:red" ><b>Client to Server Connection</b></h1>
       <p> Client sends connect message to server with details (version etc.) to setup connection. Server replies with connected/failed message depending on if or not it can establish connection with given version.</p>
         <img src="../images/ddpConnection.png">
         <p>Step-1: Client sends connect message</p>
@@ -95,7 +100,7 @@
             </li></ul>
         </div>
         
-        <h1 style="color:red" class="animated fadeInDown"><b>Remote Procedure Calls</b></h1>
+        <h1 style="color:red" ><b>Remote Procedure Calls</b></h1>
         <p> RPC or remote proceduce calls are function calls that one program uses to request service or communicate with other program over network. With RPC we can invoke a method on server and get some result in return.</p>
         <img src="../images/ddpRPC.png">
         <p> <li>method messages sent by client to the server</li></p>
@@ -119,7 +124,7 @@
                 <p>{"msg":"updated","method".["messageId"]}</p> </div>
             </li></ul>
         </div>
-        <h1 style="color:red" class="animated fadeInDown"><b>Managing Data</b></h1>
+        <h1 style="color:red" ><b>Managing Data</b></h1>
         <p> Meteor provides various messages to manage data. Following is list of few most commonly used:</p>
         <p> <li><b>sub</b> : Subscribe to a Collection</li>
           <li><b>unsub</b> : Unsubscribe from a collection</li>
@@ -132,17 +137,35 @@
           <li><b>moveBefore</b> : if an ordered collection has changed</li>
         </p>
         <img src="../images/ddpMD1.png">
-        <p>For detailed information on messages click<a href="https://docs.meteor.com/api/connections.html"> Meteor: DDP Specification</a> </p>
+        <p>For detailed information on messages click<a href="https://docs.meteor.com/api/connections.html"> <font color="#0000FF">Meteor: DDP Specification</font></a> </p>
         <p> Example:</p>
         <img src="../images/ddp_connect.png">
         <p></p>
-        <h1 style="color:red" class="animated fadeInDown"><b>Working Demo for DDP </b></h1>
+        <h1 style="color:red" ><b>Working Demo for DDP </b></h1>
         <p> This is simple project to show implementation of DDP. Every time user increments counter by clicking on insert and data is published and updated on server. </p>
-        <p>For complete demo source code click <a href="https://github.com/tanejasomi/DDP_Implementation_meteor"> github: DDP in Meteor_demo</a> </p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/FbgO2CJGfQ4" frameborder="0" gesture="media" allowfullscreen></iframe>  
-        
+        <p>For complete demo source code click <a href="https://github.com/tanejasomi/DDP_Implementation_meteor"> <font color="#0000FF">github: DDP in Meteor_demo <font color="#0000FF"></a> </p>
+        <div class="comcont">
+        <iframe width="970" height="450" src="https://www.youtube.com/embed/FbgO2CJGfQ4" frameborder="0" gesture="media" allowfullscreen></iframe>  
+        </div>
+
+    <div class="clear"></div>
+  </main>
+</div>
 <!-- ################################################################################################ -->
-         
-        
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>

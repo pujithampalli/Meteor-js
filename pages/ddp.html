@@ -14,7 +14,7 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
       
-    <div id="logo" class="fl_left ribbon animated fadeInDown">
+    <div id="logo" class="fl_left ribbon animated">
         <a href="../Meteor-js/index.html"><img src="..\images\demo\meteor.jpg"></a>
     </div>
     <nav id="mainav" class="fl_right">
@@ -22,26 +22,31 @@
         <li><a href="../index.html">Home</a></li>
         <li class="active"><a class="drop" href="#">Introduction</a>
           <ul>
-            <li><a href="gallery.html">Meteor js</a></li>
+            <li><a href="meteor.html">Meteor js</a></li>
             <li><a href="mongodb.html">MongoDB</a></li>
-            <li><a href="ddp.html">DDP with Meteor</a></li>
+            <li class="active"><a href="ddp.html">DDP with Meteor</a></li>
             <li><a href="otherDbs.html">Other Databases</a></li>
           </ul>
         </li>
         <li><a class="drop" href="#">Tutorials</a>
           <ul>
-            <li><a href="#">MongoDB</a></li>
-            <li><a href="#">DDP</a></li>
-            <li><a href="#">Server Side</a></li>
-            <li><a href="#">PostgreSQL</a></li>
-            <li><a href="#">Neo4j</a></li>
-            <li><a href="#">RethinkDB</a></li>
-            <li><a href="#">Oracle</a></li>
-            <li><a href="#">AlaSQL</a></li>
+            <li><a href="Meteor_Tutorials.html">Meteor</a></li>
+            <li><a href="mongodb_tutorial.html">MongoDB</a></li>
+            <li><a href="ddptutorial.html">DDP</a></li>
+            <li><a class="drop" href="#">Other Databases</a>
+              <ul>
+                <li><a href="Postgres-Tutorial.html">PostgreSQL</a></li>
+                <li><a href="Neo4j-Tutorial.html">Neo4j</a></li>
+                <li><a href="Rethinkdb-Tutorial.html">RethinkDB</a></li>
+                <li><a href="Oracle-Tutorial.html">Oracle</a></li>
+                <li><a href="AlaSQL-Tutorial.html">AlaSQL</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#">Installation</a></li>
-        <li><a href="#">Future</a></li>
+        <li><a href="Install.html">Installation</a></li>
+        <li><a href="Future.html">Future</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -71,22 +76,22 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1 style="color:red" class="animated fadeInDown"><b>Distributed Data Protocol</b></h1>
+      <h1 style="color:red" ><b>Distributed Data Protocol</b></h1>
       <p>Distributed Data Protocol</b> is client server protocol based on WebSockets for queuing and updating a server side database and for synchronizing such updates among clients. Websockets is way to have real time two way communication. It was created by “Meteor Development Group”and introduced in Meteor 0.2.0 for first time. Even though it was developed by Meteor team, nothing in it is meteor specific. There are many <a href="http://meteorpedia.com/read/DDP_Clients">clients</a> that use DDP protocol to communicate with Meteor from outside the Meteor Stack</p> 
       
-      <h1 style="color:red" class="animated fadeInDown"><b>Why DDP?</b></h1>
+      <h1 style="color:red" ><b>Why DDP?</b></h1>
         <p><li> It is standard way to solve latency issue associated with updates of database in JavaScript implementation : Queuing a server-side database -> Sending the result to client side -> pushing modification to client side. Instead of having a server process everything, render content and then send send HTML across the wire, just data is sent across wire and client decides what to do with it </li>
         <li> DDP is independent of kind of system: server, mobile app, web-service or client app (with exception of the browser) sends or receives data. All uses same protocol to communicate therefore all traffic looks same and treated in similar manner.</li></p>
       <img src="../images/ddp1.png">
 
-      <h1 style="color:red" class="animated fadeInDown"><b>Key Features</b></h1>
+      <h1 style="color:red" ><b>Key Features</b></h1>
       <p><li><b> Latency compensation:</b> User doesnot have to wait for a server round trip and see screen changes instantly.</li></p>
       <p><li><b> Database driver integtation:</b> ddp automatically wires up replication of remote collection. </li></p>
       <p><li><b> Default connection and transparent reconnection:</b> DDP server instance is automatically set up on the server, and each client is configured to automatically open a connection to that server on startup. When DDP client loses its connection and reconnects, subscriptions will restablish and resynchronized.  </li></p>
       <p><li><b> Security:</b> DDP implements features like authentication, input sanitization and tracker-aware.</li></p>
       <p><li><b> Connection hooks:</b> Irrespective of established or closed connection server can still run the code which make it easy to implement features like 'online users'.</li></p>
 
-      <h1 style="color:red" class="animated fadeInDown"><b>Implementation</b></h1>
+      <h1 style="color:red" ><b>Implementation</b></h1>
       <p> DDP can work with any database, framework, or programming language. It has JSON based syntax and sends messages similar to REST Protocol. Currently meteor provides both ddp client and ddp server with in same package.</p>
       <div id="comments">
             <article>
@@ -105,10 +110,25 @@
         <p>Meteor DDP implementation polls database to pick up changes and push them on the client therefore updating screen immediately without waiting for network. Since DDP uses WebSockets instead of HTTP, the data can be pushed whenever changes occur.</p>
 
         <img src="../images/ddp2.png">
-        <p>Checkout the <a href="ddptutorial.html">DDP Tutorial page</a> for more details.</p>
+        <p>Checkout the <a href="ddptutorial.html"><font color="#0000FF">DDP Tutorial page</font></a> for more details.</p>
+<div class="clear"></div>
+  </main>
+</div>
 
-           <!-- ################################################################################################ -->
-        
-        <br/>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">CSUEastBay</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
